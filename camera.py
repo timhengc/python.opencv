@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture(0)#启用摄像头
+cap = cv2.VideoCapture(0)#(创建对象cap)启用摄像头,0=笔记本内置摄像头，其他数字可能代表外接摄像头序号
 
 cap.set(3, 640)  # 3=宽度
 cap.set(4, 480)  # 4=高度

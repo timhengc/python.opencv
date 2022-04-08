@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import stackImg
 
-img = cv2.imread("C:/Users/28151/Desktop/python/practice/opencv/CLK.jpg")  # 读取图片，通道顺序（B,G,R）
+img = cv2.imread("C:/Users/28151/Desktop/python/practice/opencv/CLK.jpg")  # (创建对象img)读取图片，通道顺序（B,G,R）
 
 kernel =  np.ones((5,5),np.uint8) #创建矩阵
 
@@ -20,8 +20,7 @@ imgVer = np.vstack((img,img))#垂直拼接（必须大小，色调模式一致�
 imgStack = stackImg.stackImages(0.5,([img,imgGray,img],[img,img,img])) #用stackImg中的函数自由拼接，不受限。（大小，（[第一行],[第二行]））
 imgHSV = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)#转换成色彩模型，HSV=Hue色度, Saturation饱和度, Value
 
-str="as\nsa"
-print(str)
+
 
 cv2.imshow("CLK", img) #展示图片
 cv2.imshow("Gray", imgGray)
