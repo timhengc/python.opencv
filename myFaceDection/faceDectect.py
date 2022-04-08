@@ -109,3 +109,18 @@ img = cv2.imread('C:/Users/28151/Desktop/python/practice/opencv/myFaceDection/na
 face_detect(img)
 cv2.waitKey(0)
 '''
+
+'''#检测摄像头
+name() #获取名字列表
+cap=cv2.VideoCapture(0) #启动摄像头
+while True:
+    success, img = cap.read() #读取一帧图片
+    if success == 1:
+        face_detect(img) #识别人脸
+        keyboard = cv2.waitKey(1) & 0xFF #检测按键+延迟1ms
+    else:
+        break
+    if keyboard == ord('Q'): #按Q退出
+        break
+cv2.destroyAllWindows()  #关闭窗口
+cap.release() #释放内存'''
